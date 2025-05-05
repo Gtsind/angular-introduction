@@ -40,4 +40,11 @@
     <app-person-table [personInput]="person1"></app-person-table>
   </div>
 
+  <h4>{{"@for"}} Directive example</h4>
+  <div class="d-flex flex-wrap text-nowrap gap-2">
+    @for (user of users; track user) {
+      <app-person-table [personInput]="user"></app-person-table>
+    }
+  </div>
+
 </div>

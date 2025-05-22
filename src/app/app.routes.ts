@@ -6,14 +6,16 @@ import { ForDirectiveExampleComponent } from './components/for-directive-example
 import { EventBindExampleComponent } from './components/event-bind-example/event-bind-example.component';
 import { ComponentInputExampleComponent } from './components/component-input-example/component-input-example.component';
 import { SimpleDatatableExampleComponent } from './components/simple-datatable-example/simple-datatable-example.component';
+import { OutputExampleComponent } from './components/output-example/output-example.component';
 
 export const routes: Routes = [
   { path: 'for-directive-example', component: ForDirectiveExampleComponent},
   { path: 'component-input-example', component: ComponentInputExampleComponent},
+  { path: 'output-example', component: OutputExampleComponent},
   { path: 'simple-datatable-example', component: SimpleDatatableExampleComponent},
-  { path: 'user-registration-example', component: UserRegistrationComponent },
+  { path: 'user-registration', component: UserRegistrationComponent },
   { path: 'event-bind-example', component: EventBindExampleComponent},
-  { path: 'user-login', component: UserLoginComponent},
+  { path: 'login', component: UserLoginComponent},
   { path: 'welcome', component: WelcomeComponent},
   { path: '', redirectTo: '/welcome', pathMatch: 'full'}
 ];

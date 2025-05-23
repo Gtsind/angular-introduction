@@ -13,6 +13,10 @@ export class SimpleDatatableComponent {
   @Input() data: EPerson[] | undefined;
   @Output() personClicked = new EventEmitter<EPerson>();
 
+  // ngOnChanges(){
+  //   console.log("NgOnChanges ", this.data)
+  // }
+
   sortOrder = {
     givenName: 'none',
     surName: 'none',

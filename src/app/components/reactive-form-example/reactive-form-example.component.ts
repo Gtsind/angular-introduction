@@ -19,8 +19,8 @@ export class ReactiveFormExampleComponent {
   persons: EPerson[] = [];
 
   onPerson(data:EPerson) {
-    console.log("Father", data);
     this.currentPerson = data;
-    this.persons.push(data);
+    // this.persons.push(data);
+    this.persons = [...this.persons, data];
   }
 }

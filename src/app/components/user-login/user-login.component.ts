@@ -5,6 +5,7 @@ import {
   ReactiveFormsModule,
   Validators
 } from "@angular/forms";
+import { Credentials } from 'src/app/shared/interfaces/user';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -23,5 +24,16 @@ export class UserLoginComponent {
 
   onSubmit() {
     console.log(this.form.value);
+    const credentials = this.form.value as Credentials;
+    
+    this.userService.loginUser(credentials)
+      .subscribe({
+        next: (response) => {
+          console.log("Logged in",response)
+        },
+        error: (error) => {
+          console.log("Failed to log in", error)
+        }
+      })
   }
 }

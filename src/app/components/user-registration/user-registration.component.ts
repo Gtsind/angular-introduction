@@ -54,8 +54,8 @@ export class UserRegistrationComponent {
       'surname': this.myForm.get('surname')?.value || '',
       'email': this.myForm.get('email')?.value || '',
       'address': {
-        'area': this.myForm.get('area')?.value || '',
-        'road': this.myForm.get('road')?.value || ''
+        'area': this.myForm.controls.address.controls.area?.value || '',
+        'road': this.myForm.controls.address.controls.road?.value || '',
       }
     }
     this.userService.registerUser(data)
@@ -70,7 +70,7 @@ export class UserRegistrationComponent {
           console.log("User not registered", response)
           this.registrationStatus = {
             success: false,
-            message: response.data
+            message: response.message
           }
         }
       })

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-welcome',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './welcome.component.css'
 })
 export class WelcomeComponent {
-  name = "George";
+  userService = inject(UserService);
+  user = this.userService.user$;
+  name = this.user()?.username;
 }

@@ -10,6 +10,8 @@ import { OutputExampleComponent } from './components/output-example/output-examp
 import { TemplateDrivenFormExampleComponent } from './components/template-driven-form-example/template-driven-form-example.component';
 import { ReactiveFormExampleComponent } from './components/reactive-form-example/reactive-form-example.component';
 import { HttpClientExampleComponent } from './components/http-client-example/http-client-example.component';
+import { authGuard } from './shared/guards/auth.guard';
+import { adminRoleGuard } from './shared/guards/admin-role.guard';
 
 export const routes: Routes = [
   { path: 'for-directive-example', component: ForDirectiveExampleComponent},
@@ -18,7 +20,11 @@ export const routes: Routes = [
   { path: 'simple-datatable-example', component: SimpleDatatableExampleComponent},
   { path: 'template-driven-form-example', component: TemplateDrivenFormExampleComponent},
   { path: 'reactive-form-example', component: ReactiveFormExampleComponent},
-  { path: 'user-registration', component: UserRegistrationComponent },
+  { 
+    path: 'user-registration',
+    component: UserRegistrationComponent,
+    canActivate:[authGuard, adminRoleGuard] 
+  },
   { path: 'event-bind-example', component: EventBindExampleComponent},
   { path: 'http-client-example', component: HttpClientExampleComponent},
   { path: 'login', component: UserLoginComponent},

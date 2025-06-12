@@ -27,7 +27,7 @@ export class UserService {
   }
 
   loginUser(credentials: Credentials) {
-    return this.http.post<{status: boolean, data: string}>(`${API_URL_AUTH}/login`, credentials)
+    return this.http.post<{status: boolean, data: string}>(`${API_URL_AUTH}/login`, credentials);
   }
 
   logoutUser() {
